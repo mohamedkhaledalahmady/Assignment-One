@@ -22,9 +22,10 @@ uint8 Length(uint8* str)
 // Function to compare between two strings that return -1, 0, 1 if string one less , match , greater tan string two
 int8 Compare(uint8* str1, uint8* str2)
 {
-	uint8 L1 = Length(str1);
+	uint8 L1 = Length(str1) - 1;
 	uint8 L2 = Length(str2);
 	int8 state = match;
+	//printf("L1: %d\nL2: %d\n", L1, L2);
 	if(L1 <= L2)
 	{
 		for(uint8 i = 0; i < L2 ; i++)
@@ -56,11 +57,15 @@ int main()
 	uint8 command[MaxCommandLength];
 	while(True)
 	{
-		printf("qawl ya sahibaa #$ ");
+		printf("qwal ya sa7bii #$ ");
 		fgets(command, MaxCommandLength, stdin);
-		Length(command) != 1 ? printf("you said: %s\n", command) : printf("you didn't tell anything ya sahbii :(\n");
-		if(Compare(command, "exit"))
+		// printf("%d\n", Compare(command, "exit"));
+		if(Compare(command, "exit") == 0)
+		{
+			printf("Good Bye:)\n");
 			break;
-	}
+		}
+		Length(command) != 1 ? printf("you said: %s", command) : printf("you didn't tell anything ya sa7bii :(\n");
+	}	
 	return 0;
 }
