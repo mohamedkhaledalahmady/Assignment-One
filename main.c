@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<string.h>
+
 
 typedef signed char int8;	// -128 : 127
 typedef unsigned char uint8;	// 0 : 255
